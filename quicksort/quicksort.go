@@ -21,21 +21,21 @@ func quicksort(array []int, start, end int) {
 
 	if start < end {
 		p := partition(array, start, end)
-		quicksort(array, 0, p - 1)
-		quicksort(array, p + 1, end)
+		quicksort(array, 0, p-1)
+		quicksort(array, p+1, end)
 	}
 }
 
 func main() {
 	a := []int{2, 2, 2, 2, 2, 2, 2, 2}
-	quicksort(a, 0, len(a) - 1)
+	quicksort(a, 0, len(a)-1)
 	fmt.Println(a)
 
 	a = []int{3, 1, 7, -1, 12, -6, 111, 32}
-	quicksort(a, 0, len(a) - 1)
+	quicksort(a, 0, len(a)-1)
 	fmt.Println(a)
 
 	a = []int{9, 8, 7, 6, 5, 4, 3, 2, 1}
-	quicksort(a, 0, len(a) - 1)
+	quicksort(a, 0, len(a)-1)
 	fmt.Println(a)
 }
