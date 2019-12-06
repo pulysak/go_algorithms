@@ -6,7 +6,7 @@ func max_heapify(array []int, i int) {
 	max := i
 	right := 2*i + 1
 	left := 2*i + 2
-	array_len := len(array)
+	array_len := len(array) - 1
 
 	if right <= array_len && array[right] > array[max] {
 		max = right
@@ -20,10 +20,16 @@ func max_heapify(array []int, i int) {
 	}
 }
 
+func create_max_heap(array []int) {
+	for i := len(array) - 1; i >= 0; i-- {
+		max_heapify(array, i)
+	}
+}
+
 func main() {
-	array := []int{100, 1, 6, 5, 3, 5, 1, 3, 2, 0, 1}
+	array := []int{3, 19, 1, 14, 8, 7}
 	fmt.Println(array)
 
-	max_heapify(array, 1)
+	create_max_heap(array)
 	fmt.Println(array)
 }
